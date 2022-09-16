@@ -22,7 +22,7 @@ namespace HCI
         {
             if (user.Text.ToLower() == "aaa" && pass.Text == "123")
             {
-                var main = new Main();
+                var main = new Main(0);
                 Console.Beep();
                 this.Hide();
                 main.Closed += (s, args) => this.Close();

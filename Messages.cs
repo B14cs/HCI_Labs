@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +13,23 @@ namespace HCI
 {
     public partial class Messages : Form
     {
-        public Messages()
+        int modeFlag;
+        public Messages(int modeFlag)
         {
+            this.modeFlag = modeFlag;
             InitializeComponent();
+            if (modeFlag == 1)
+            {
+                this.BackColor = Color.FromArgb(60, 63, 65);
+                alert.BackColor = Color.FromArgb(60, 63, 65);
+                alert.ForeColor = Color.FromArgb(187, 187, 187);
+                information.BackColor = Color.FromArgb(60, 63, 65);
+                information.ForeColor = Color.FromArgb(187, 187, 187);
+                warning.BackColor = Color.FromArgb(60, 63, 65);
+                warning.ForeColor = Color.FromArgb(187, 187, 187);
+                question.BackColor = Color.FromArgb(60, 63, 65);
+                question.ForeColor = Color.FromArgb(187, 187, 187);
+            }
         }
 
         private void alert_Click(object sender, EventArgs e)
@@ -38,7 +53,7 @@ namespace HCI
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
-                Main main = new Main();
+                Main main = new Main(modeFlag);
                 main.Show();
             }
         }

@@ -34,6 +34,7 @@
             this.wordpad = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.darkMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // quiz
@@ -42,7 +43,7 @@
             this.quiz.FlatAppearance.BorderSize = 0;
             this.quiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.quiz.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.quiz.Location = new System.Drawing.Point(75, 80);
+            this.quiz.Location = new System.Drawing.Point(75, 60);
             this.quiz.Name = "quiz";
             this.quiz.Size = new System.Drawing.Size(250, 40);
             this.quiz.TabIndex = 3;
@@ -57,7 +58,7 @@
             this.message.FlatAppearance.BorderSize = 0;
             this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.message.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.message.Location = new System.Drawing.Point(75, 160);
+            this.message.Location = new System.Drawing.Point(75, 135);
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(250, 40);
             this.message.TabIndex = 4;
@@ -72,7 +73,7 @@
             this.wordpad.FlatAppearance.BorderSize = 0;
             this.wordpad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.wordpad.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.wordpad.Location = new System.Drawing.Point(75, 240);
+            this.wordpad.Location = new System.Drawing.Point(75, 210);
             this.wordpad.Name = "wordpad";
             this.wordpad.Size = new System.Drawing.Size(250, 40);
             this.wordpad.TabIndex = 5;
@@ -87,7 +88,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(75, 320);
+            this.button1.Location = new System.Drawing.Point(75, 360);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(250, 40);
             this.button1.TabIndex = 6;
@@ -95,11 +96,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // darkMode
+            // 
+            this.darkMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.darkMode.FlatAppearance.BorderSize = 0;
+            this.darkMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.darkMode.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.darkMode.Location = new System.Drawing.Point(75, 285);
+            this.darkMode.Name = "darkMode";
+            this.darkMode.Size = new System.Drawing.Size(250, 40);
+            this.darkMode.TabIndex = 7;
+            this.darkMode.Text = "Dark mode";
+            this.darkMode.UseVisualStyleBackColor = true;
+            this.darkMode.Click += new System.EventHandler(this.darkMode_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 450);
+            this.Controls.Add(this.darkMode);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.wordpad);
             this.Controls.Add(this.message);
@@ -119,5 +135,6 @@
         private System.Windows.Forms.Button wordpad;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button darkMode;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,18 @@ namespace HCI
 {
     public partial class Quiz : Form
     {
-        public Quiz()
+        int modeFlag;
+        public Quiz(int modeFlag)
         {
+            this.modeFlag = modeFlag;
             InitializeComponent();
+            if (modeFlag == 1)
+            {
+                this.BackColor = Color.FromArgb(60, 63, 65);
+                label1.ForeColor = Color.FromArgb(187, 187, 187);
+                boyLable.ForeColor = Color.FromArgb(187, 187, 187);
+                girlLable.ForeColor = Color.FromArgb(187, 187, 187);
+            }
         }
 
         private void girl_DragEnter(object sender, DragEventArgs e)
@@ -94,7 +104,7 @@ namespace HCI
             if(boy.Image == boyPic.Image && girl.Image == girlPic.Image)
             {
                 this.Close();
-                var quiz2 = new Quiz2();
+                var quiz2 = new Quiz2(modeFlag);
                 quiz2.Show();
             }
         }

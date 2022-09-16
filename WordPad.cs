@@ -13,9 +13,39 @@ namespace HCI
 {
     public partial class WordPad : Form
     {
-        public WordPad()
+        int modeFlag;
+        public WordPad(int modeFlag)
         {
+            this.modeFlag = modeFlag;
             InitializeComponent();
+            if (modeFlag == 1)
+            {
+                this.BackColor = Color.FromArgb(60, 63, 65);
+                richTextBox1.BackColor = Color.FromArgb(60, 63, 65);
+                richTextBox1.ForeColor = Color.FromArgb(187, 187, 187);
+                menuStrip1.BackColor = Color.FromArgb(60, 63, 65);
+                menuStrip1.ForeColor = Color.FromArgb(187, 187, 187);
+                newToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                newToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                openToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                openToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                saveToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                saveToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                closeToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                closeToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                undoToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                undoToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                redoToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                redoToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                clearToolStripMenuItem.BackColor = Color.FromArgb(60, 63, 65);
+                clearToolStripMenuItem.ForeColor = Color.FromArgb(187, 187, 187);
+                toolStrip1.BackColor = Color.FromArgb(60, 63, 65);
+                toolStrip1.ForeColor = Color.FromArgb(187, 187, 187);
+                toolStripComboBox1.BackColor = Color.FromArgb(60, 63, 65);
+                toolStripComboBox1.ForeColor = Color.FromArgb(187, 187, 187);
+                toolStripComboBox2.BackColor = Color.FromArgb(60, 63, 65);
+                toolStripComboBox2.ForeColor = Color.FromArgb(187, 187, 187);
+            }
         }
 
         private void WordPad_Load(object sender, EventArgs e)
@@ -153,7 +183,7 @@ namespace HCI
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Main main = new Main();
+            Main main = new Main(modeFlag);
             main.Show();
         }
     }

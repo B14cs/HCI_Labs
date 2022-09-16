@@ -12,9 +12,20 @@ namespace HCI
 {
     public partial class Quiz2 : Form
     {
-        public Quiz2()
+        int modeFlag;
+        public Quiz2(int modeFlag)
         {
+            this.modeFlag = modeFlag;
             InitializeComponent();
+            if (modeFlag == 1)
+            {
+                this.BackColor = Color.FromArgb(60, 63, 65);
+                label1.ForeColor = Color.FromArgb(187, 187, 187);
+                catLable.ForeColor = Color.FromArgb(187, 187, 187);
+                dogLabel.ForeColor = Color.FromArgb(187, 187, 187);
+                lionLabel.ForeColor = Color.FromArgb(187, 187, 187);
+                monkeyLabel.ForeColor = Color.FromArgb(187, 187, 187);
+            }
         }
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
@@ -62,7 +73,7 @@ namespace HCI
             DialogResult dialogResult = MessageBox.Show("Congratulations, You've won!", "Won");
             if (dialogResult == DialogResult.OK)
             {
-                var main = new Main();
+                var main = new Main(modeFlag);
                 this.Close();
                 main.Show();
             }
